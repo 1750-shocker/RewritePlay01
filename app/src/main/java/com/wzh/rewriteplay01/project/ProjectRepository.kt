@@ -51,6 +51,7 @@ class ProjectRepository @Inject constructor(private val application: Application
                 downArticleTime = it
                 true
             }
+            //数据缓存是否过期
             if (articleListForChapterId.isNotEmpty() && downArticleTime > 0 && downArticleTime - System.currentTimeMillis() < FOUR_HOUR && !query.isRefresh) {
                 Result.success(articleListForChapterId)
             } else {

@@ -49,4 +49,13 @@ dependencies {
     api(libs.lifecycle.runtime.ktx)
     api(libs.lifecycle.viewmodel.ktx)
     api(libs.material)
+
+    api(libs.lottie)
+
+    api(libs.refresh.layout.kernel)      // 核心必须依赖
+    api(libs.refresh.header.classics)    // 经典刷新头
+// api 'com.scwang.smart:refresh-header-material:2.0.1'    // 谷歌刷新头
+    api(libs.refresh.footer.classics)   // 经典加载
+
+    api(libs.fragment.ktx)
 }
