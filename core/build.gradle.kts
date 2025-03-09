@@ -12,6 +12,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        resourceConfigurations += listOf("en", "zh", "zh-rCN", "zh-rHK", "zh-rTW")
     }
 
     buildTypes {
@@ -29,6 +30,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -58,4 +62,8 @@ dependencies {
     api(libs.refresh.footer.classics)   // 经典加载
 
     api(libs.fragment.ktx)
+
+    // 使用 Version Catalog 中的 Glide 依赖
+    api(libs.glide)
+    annotationProcessor(libs.glide.compiler)
 }

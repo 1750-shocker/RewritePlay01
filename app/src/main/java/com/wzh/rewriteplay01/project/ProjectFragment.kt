@@ -9,6 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.wzh.core.util.getStatusBarHeight
 import com.wzh.core.view.custom.FragmentAdapter
 import com.wzh.rewriteplay01.databinding.FragmentProjectBinding
+import com.wzh.rewriteplay01.project.list.ProjectListFragment
 
 class ProjectFragment : BaseTabFragment(){
     private val viewModel by viewModels<ProjectViewModel>()
@@ -41,7 +42,7 @@ class ProjectFragment : BaseTabFragment(){
             //这里是数据到手（没出错）进行处理的地方
             it.forEach{project->
                 nameList.add(project.name)
-//                viewList.add(ProjectListFragment.newInstance(project.id))//还没实现
+                viewList.add(ProjectListFragment.newInstance(project.id))
             }
             adapter.apply {
                 reset(nameList.toTypedArray())

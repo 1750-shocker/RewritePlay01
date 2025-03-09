@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import com.wzh.core.util.DataStoreUtils
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 @SuppressLint("StaticFieldLeak")
 object Play {
@@ -30,6 +32,21 @@ object Play {
         context = c
         context?.apply{
             dataStore = DataStoreUtils.init(this)
+        }
+    }
+
+    /**
+     * 判断用户是否已登录。
+     *
+     * @return 已登录返回true，未登录返回false。
+     */
+    fun isLogin(): Flow<Boolean> {
+        return if (::dataStore.isInitialized) {
+            dataStore.readBooleanFlow(IS_LOGIN)
+        } else {
+            flow {
+                emit(false)
+            }
         }
     }
 }
