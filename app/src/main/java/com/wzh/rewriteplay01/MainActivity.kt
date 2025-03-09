@@ -7,11 +7,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.wzh.core.util.showToast
 import com.wzh.core.view.base.BaseActivity
 import com.wzh.rewriteplay01.databinding.ActivityMainBinding

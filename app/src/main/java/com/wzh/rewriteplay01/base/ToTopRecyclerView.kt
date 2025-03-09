@@ -69,6 +69,9 @@ class ToTopRecyclerView @JvmOverloads constructor(
         }
     }
 
+    /**
+     * 对于列表的横竖屏适配
+     */
     fun setRecyclerViewLayoutManager(isLinearLayout: Boolean) {
         if (isLinearLayout) {
             mToTopRecyclerView.layoutManager = LinearLayoutManager(context)

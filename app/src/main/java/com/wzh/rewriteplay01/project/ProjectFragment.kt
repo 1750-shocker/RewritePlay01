@@ -10,7 +10,9 @@ import com.wzh.core.util.getStatusBarHeight
 import com.wzh.core.view.custom.FragmentAdapter
 import com.wzh.rewriteplay01.databinding.FragmentProjectBinding
 import com.wzh.rewriteplay01.project.list.ProjectListFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProjectFragment : BaseTabFragment(){
     private val viewModel by viewModels<ProjectViewModel>()
 

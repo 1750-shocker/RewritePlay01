@@ -7,7 +7,10 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseRecyclerAdapter<V : ViewBinding> :
     RecyclerView.Adapter<BaseRecyclerAdapter.BaseRecyclerHolder<V>>() {
 
-    abstract override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseRecyclerHolder<V>
+    abstract override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): BaseRecyclerHolder<V>
 
     override fun onBindViewHolder(holder: BaseRecyclerHolder<V>, position: Int) {
         onBaseBindViewHolder(position, holder.binding)
