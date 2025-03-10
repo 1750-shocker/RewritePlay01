@@ -24,27 +24,12 @@ class ProjectListFragment : BaseListFragment() {
         }
     }
 
-    override fun refreshData() {
-        getArticleList(true)
-    }
-
-    override fun isHaveHeadMargin(): Boolean {
-        return false
-    }
 
     override fun initView() {
         articleAdapter = ArticleAdapter(requireContext(), viewModel.dataList)
         super.initView()
     }
 
-    private fun getArticleList(isRefresh: Boolean) {
-        if (viewModel.dataList.size <= 0) {
-            startLoading()
-            projectCid?.apply {
-                viewModel.getDataList(QueryArticle(page, this, isRefresh))
-            }
-        }
-    }
 
     override fun initData() {
         setDataStatus(viewModel.dataLiveData, {
@@ -57,6 +42,23 @@ class ProjectListFragment : BaseListFragment() {
             articleAdapter.notifyItemInserted(it.size)
         }
         getArticleList(false)
+    }
+
+    override fun refreshData() {
+        getArticleList(true)
+    }
+
+    private fun getArticleList(isRefresh: Boolean) {
+        if (viewModel.dataList.size <= 0) {
+            startLoading()
+            projectCid?.apply {
+                viewModel.getDataList(QueryArticle(page, this, isRefresh))
+            }
+        }
+    }
+
+    override fun isHaveHeadMargin(): Boolean {
+        return false
     }
 
     companion object {
