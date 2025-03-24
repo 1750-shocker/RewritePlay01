@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel by viewModels<MainViewModel>()
-    var isPort = true
+    private var isPort = true
 
     override fun initView() {
         isPort = resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
@@ -29,7 +29,7 @@ class MainActivity : BaseActivity() {
 //            true -> binding.homeView?.init(supportFragmentManager, viewModel)
 //            false -> binding.homeLandView?.init(supportFragmentManager, viewModel)
 //        }
-        binding.homeView?.init(supportFragmentManager, viewModel)
+        binding.homeView.init(supportFragmentManager, viewModel)
     }
 
     @SuppressLint("MissingSuperCall")

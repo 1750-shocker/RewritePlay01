@@ -36,6 +36,7 @@ class ArticleAdapter(
     private val articleList: ArrayList<Article>,
     private val isShowCollect: Boolean = true,
 ) : BaseRecyclerAdapter<AdapterArticleBinding>(), CoroutineScope by MainScope() {
+    //通过实现 `CoroutineScope`，你可以直接在类中使用 `launch` 和 `async` 启动协程，而无需显式传递 `CoroutineContext`。
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

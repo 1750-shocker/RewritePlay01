@@ -11,7 +11,7 @@ import com.wzh.rewriteplay01.home.ArticleCollectBaseFragment
 
 abstract class BaseListFragment : ArticleCollectBaseFragment() {
 
-    protected var binding: FragmentBaseListBinding? = null
+    private var binding: FragmentBaseListBinding? = null
 
     protected lateinit var articleAdapter: ArticleAdapter
     protected var page = 1

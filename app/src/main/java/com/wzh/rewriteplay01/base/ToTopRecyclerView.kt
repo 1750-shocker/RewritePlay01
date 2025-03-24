@@ -24,6 +24,9 @@ class ToTopRecyclerView @JvmOverloads constructor(
     private lateinit var mToTopIvClick: ImageView
     private val mLoadTime = 1000
 
+    init {
+        initView()
+    }
     /**
      * 初始化布局
      */
@@ -95,10 +98,6 @@ class ToTopRecyclerView @JvmOverloads constructor(
                 }
             })
         }
-    }
-
-    init {
-        initView()
     }
 
     override fun onClick(v: View) {
